@@ -15,7 +15,10 @@ const SupportPane = ({ info }) => {
       <div className="w-1/2 flex justify-between items-center border-l pl-5">
         <div className="space-x-2">
           {info.helper.map((item) => (
-            <button className="w-10 h-10 rounded-full px-1 py-1 bg-theme text-white hover:bg-gray-500">
+            <button
+              key={item.id}
+              className="w-10 h-10 rounded-full px-1 py-1 bg-theme text-white hover:bg-gray-500"
+            >
               {item.mark}
             </button>
           ))}
