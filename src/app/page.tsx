@@ -3,9 +3,9 @@ import Navbar from "./_components/common/Navbar";
 
 export default function Home() {
   return (
-    <div className="container mx-auto">
+    <div>
       <Navbar />
-      <main className="bg-gray-200 container pt-10">
+      <main className="bg-gray-200 container pt-14">
         <h1 className="text-3xl">Hello World</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore quas
