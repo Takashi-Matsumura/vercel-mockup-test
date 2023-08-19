@@ -18,7 +18,7 @@ interface TimeLineMainProps {
 const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
   return (
     <div>
-      <div className="bg-theme h-24 fixed w-full px-10 flex items-center">
+      <div className="bg-theme h-20 md:h-24 fixed w-full px-2 md:px-10 flex items-center">
         <Link href="#" className="px-4 w-1/3 text-white">
           <FontAwesomeIcon icon={faUser} className="fa-2x" />
         </Link>
@@ -32,7 +32,7 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
           </Link>
         </div>
       </div>
-      <div className="flex flex-col min-h-screen pt-24 space-y-2 px-5">
+      <div className="flex flex-col min-h-screen pt-20 md:pt-24 space-y-2 px-5">
         {dataProvider.map((item) => (
           <SupportPane key={item.id} info={item} />
         ))}

@@ -6,8 +6,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <header>
-      <div className="bg-gray-400 w-full fixed flex justify-around h-14 items-center">
-        <div className="text-2xl font-bold">Care & Frail Support</div>
+      <div className="bg-gray-400 w-full fixed flex justify-around h-10 md:h-14 items-center">
+        <div className="text-xl font-bold md:text-2xl">
+          Care & Frail Support
+        </div>
         <div className="items-center space-x-3 hidden md:flex">
           <Link href="/">Home</Link>
           <Link href="/bbs">BBS</Link>

@@ -8,16 +8,16 @@ interface SupportPaneProps {
 const SupportPane = ({ info }: SupportPaneProps) => {
   return (
     <div className="bg-white border flex w-full justify-between p-4 items-center">
-      <div className="w-1/2 flex justify-between items-center">
+      <div className="w-full md:w-1/2 md:flex md:justify-between items-center">
         <div>
-          <div>
+          <div className="text-base">
             {info.period.begin} - {info.period.end}
           </div>
           <div className="text-xl">{info.guest.name}</div>
         </div>
-        <p className="w-1/2">{info.text}</p>
+        <p className="w-full md:w-1/2">{info.text}</p>
       </div>
-      <div className="w-1/2 flex justify-between items-center border-l pl-5">
+      <div className="w-1/2 md:flex justify-between items-center border-l pl-5">
         <div className="space-x-2">
           {info.helper.map((item) => (
             <button
@@ -28,7 +28,9 @@ const SupportPane = ({ info }: SupportPaneProps) => {
             </button>
           ))}
         </div>
-        <div className="w-1/2">{info.transportation}</div>
+        <div className="w-full text-right md:text-left md:w-1/2">
+          {info.transportation}
+        </div>
       </div>
     </div>
   );
