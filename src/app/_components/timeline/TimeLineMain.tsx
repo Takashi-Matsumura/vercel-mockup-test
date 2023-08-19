@@ -9,8 +9,13 @@ import { ja } from "date-fns/locale";
 import Link from "next/link";
 import React from "react";
 import SupportPane from "./SupportPane";
+import { Tweets } from "@/app/_types/types";
 
-const TimeLineMain = ({ dataProvider }) => {
+interface TimeLineMainProps {
+  dataProvider: Tweets;
+}
+
+const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
   return (
     <div>
       <div className="bg-theme h-24 fixed w-full px-10 flex items-center">

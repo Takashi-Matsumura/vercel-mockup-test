@@ -1,6 +1,11 @@
+import { Info } from "@/app/_types/types";
 import React from "react";
 
-const SupportPane = ({ info }) => {
+interface SupportPaneProps {
+  info: Info;
+}
+
+const SupportPane = ({ info }: SupportPaneProps) => {
   return (
     <div className="bg-white border flex w-full justify-between p-4 items-center">
       <div className="w-1/2 flex justify-between items-center">
