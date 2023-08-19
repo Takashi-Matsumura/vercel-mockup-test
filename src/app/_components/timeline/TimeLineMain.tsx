@@ -1,7 +1,10 @@
+"use client";
+
 import {
   faAngleLeft,
   faAngleRight,
   faUser,
+  faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { format } from "date-fns";
@@ -16,12 +19,33 @@ interface TimeLineMainProps {
 }
 
 const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
+  const [users, setUsers] = React.useState(false);
+
+  const hidden = () => {
+    setUsers(!users);
+  };
+
   return (
     <div>
       <div className="bg-theme h-20 md:h-24 fixed w-full px-2 md:px-10 flex items-center">
-        <Link href="#" className="px-4 w-1/3 text-white">
-          <FontAwesomeIcon icon={faUser} className="fa-2x" />
-        </Link>
+        {!users && (
+          <Link
+            href="#"
+            className="w-10 text-center text-white"
+            onClick={hidden}
+          >
+            <FontAwesomeIcon icon={faUsers} className="fa-2x" />
+          </Link>
+        )}
+        {users && (
+          <Link
+            href="#"
+            className="w-10 text-center text-white"
+            onClick={hidden}
+          >
+            <FontAwesomeIcon icon={faUser} className="fa-2x" />
+          </Link>
+        )}
         <div className="flex justify-center text-white text-4xl items-center h-full w-1/3">
           <Link href="#" className="px-4">
             <FontAwesomeIcon icon={faAngleLeft} />
