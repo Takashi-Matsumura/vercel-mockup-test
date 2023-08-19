@@ -22,7 +22,7 @@ const SupportPane = ({ info }: SupportPaneProps) => {
           {info.helper.map((item) => (
             <button
               key={item.id}
-              className="w-10 h-10 rounded-full px-1 py-1 bg-theme text-white hover:bg-gray-500"
+              className="w-8 h-8 md:w-10 md:h-10 rounded-full px-1 py-1 bg-theme text-white hover:bg-gray-500"
             >
               {item.mark}
             </button>
