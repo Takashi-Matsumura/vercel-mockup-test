@@ -9,10 +9,10 @@ import { ja } from "date-fns/locale";
 import Link from "next/link";
 import React from "react";
 import SupportPane from "./SupportPane";
-import { Tweets } from "@/app/_types/types";
+import { Tweet } from "@/app/_types/types";
 
 interface TimeLineMainProps {
-  dataProvider: Tweets;
+  dataProvider: Tweet[];
 }
 
 const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {

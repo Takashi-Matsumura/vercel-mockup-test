@@ -1,8 +1,8 @@
-import { Info } from "@/app/_types/types";
+import { Tweet } from "@/app/_types/types";
 import React from "react";
 
 interface SupportPaneProps {
-  info: Info;
+  info: Tweet;
 }
 
 const SupportPane = ({ info }: SupportPaneProps) => {

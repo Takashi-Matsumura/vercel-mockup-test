@@ -1,8 +1,4 @@
-export interface Tweets {
-  tweets: Info[];
-}
-
-export interface Info {
+export interface Tweet {
   id: string;
   date: string;
   period: Period;
