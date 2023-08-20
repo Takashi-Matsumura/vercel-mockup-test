@@ -49,7 +49,7 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
         </div>
         <div>{/* 休みヘルパー */}</div>
       </div>
-      <div className="flex flex-col min-h-screen pt-20 md:pt-24 space-y-2 px-5 w-full">
+      <div className="flex flex-col min-h-screen pt-24 md:pt-28 space-y-2 px-5 w-full">
         {dataProvider.map((item) => (
           <SupportPane key={item.id} info={item} />
         ))}
