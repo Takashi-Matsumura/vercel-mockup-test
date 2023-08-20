@@ -30,12 +30,12 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
       <div className="bg-theme h-20 md:h-24 fixed w-full px-4 md:px-10 flex items-center">
         {!users && (
           <Link href="#" className="text-center text-white" onClick={hidden}>
-            <FontAwesomeIcon icon={faUsers} className="fa-2x" />
+            <FontAwesomeIcon icon={faUsers} className="w-10 fa-2x" />
           </Link>
         )}
         {users && (
           <Link href="#" className="text-center text-white" onClick={hidden}>
-            <FontAwesomeIcon icon={faUser} className="fa-2x" />
+            <FontAwesomeIcon icon={faUser} className="w-10 fa-2x" />
           </Link>
         )}
         <div className="flex justify-center text-white text-4xl items-center h-full w-full">
