@@ -27,26 +27,18 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
 
   return (
     <div>
-      <div className="bg-theme h-20 md:h-24 fixed w-full px-2 md:px-10 flex items-center">
+      <div className="bg-theme h-20 md:h-24 fixed w-full px-4 md:px-10 flex items-center">
         {!users && (
-          <Link
-            href="#"
-            className="w-10 text-center text-white"
-            onClick={hidden}
-          >
+          <Link href="#" className="text-center text-white" onClick={hidden}>
             <FontAwesomeIcon icon={faUsers} className="fa-2x" />
           </Link>
         )}
         {users && (
-          <Link
-            href="#"
-            className="w-10 text-center text-white"
-            onClick={hidden}
-          >
+          <Link href="#" className="text-center text-white" onClick={hidden}>
             <FontAwesomeIcon icon={faUser} className="fa-2x" />
           </Link>
         )}
-        <div className="flex justify-center text-white text-4xl items-center h-full w-1/3">
+        <div className="flex justify-center text-white text-4xl items-center h-full w-full">
           <Link href="#" className="px-4">
             <FontAwesomeIcon icon={faAngleLeft} />
           </Link>
@@ -55,8 +47,9 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
             <FontAwesomeIcon icon={faAngleRight} />
           </Link>
         </div>
+        <div>{/* 休みヘルパー */}</div>
       </div>
-      <div className="flex flex-col min-h-screen pt-20 md:pt-24 space-y-2 px-5">
+      <div className="flex flex-col min-h-screen pt-20 md:pt-24 space-y-2 px-5 w-full">
         {dataProvider.map((item) => (
           <SupportPane key={item.id} info={item} />
         ))}
