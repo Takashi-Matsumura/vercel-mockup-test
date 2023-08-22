@@ -16,9 +16,10 @@ import { Tweet } from "@/app/_types/types";
 
 interface TimeLineMainProps {
   dataProvider: Tweet[];
+  className?: string;
 }
 
-const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
+const TimeLineMain = ({ dataProvider, className }: TimeLineMainProps) => {
   const [users, setUsers] = React.useState(false);
 
   const hidden = () => {
@@ -26,7 +27,7 @@ const TimeLineMain = ({ dataProvider }: TimeLineMainProps) => {
   };
 
   return (
-    <div>
+    <div className={className}>
       <div className="bg-theme h-20 md:h-24 fixed w-full px-4 md:px-10 flex items-center">
         {!users && (
           <Link href="#" className="text-center text-white" onClick={hidden}>
