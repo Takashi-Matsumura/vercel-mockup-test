@@ -13,6 +13,8 @@ import Link from "next/link";
 import React from "react";
 import SupportPane from "./SupportPane";
 import { Tweet } from "@/app/_types/types";
+import dayjs from "dayjs";
+import "dayjs/locale/ja";
 
 interface TimeLineMainProps {
   dataProvider: Tweet[];
@@ -20,31 +22,58 @@ interface TimeLineMainProps {
 }
 
 const TimeLineMain = ({ dataProvider, className }: TimeLineMainProps) => {
-  const [users, setUsers] = React.useState(false);
+  const [isShowingAllUsers, setIsShowingAllUsers] = React.useState(true);
 
-  const hidden = () => {
-    setUsers(!users);
+  const toggleUserListView = () => {
+    setIsShowingAllUsers(!isShowingAllUsers);
+  };
+
+  dayjs.locale("ja");
+  const [displayedDate, setDisplayedDate] = React.useState(dayjs());
+
+  const changeDisplayedDate = (direction: "prev" | "next") => {
+    if (direction === "prev") {
+      setDisplayedDate(displayedDate.add(1, "day"));
+    } else {
+      setDisplayedDate(displayedDate.subtract(1, "day"));
+    }
   };
 
   return (
     <div className={className}>
       <div className="bg-theme h-20 md:h-24 fixed w-full px-4 md:px-10 flex items-center">
-        {!users && (
-          <Link href="#" className="text-center text-white" onClick={hidden}>
+        {isShowingAllUsers && (
+          <Link
+            href="#"
+            className="text-center text-white"
+            onClick={toggleUserListView}
+          >
             <FontAwesomeIcon icon={faUsers} className="w-10 fa-2x" />
           </Link>
         )}
-        {users && (
-          <Link href="#" className="text-center text-white" onClick={hidden}>
+        {!isShowingAllUsers && (
+          <Link
+            href="#"
+            className="text-center text-white"
+            onClick={toggleUserListView}
+          >
             <FontAwesomeIcon icon={faUser} className="w-10 fa-2x" />
           </Link>
         )}
         <div className="flex justify-center text-white text-4xl items-center h-full w-full">
-          <Link href="#" className="px-4">
+          <Link
+            href="#"
+            className="px-4"
+            onClick={() => changeDisplayedDate("next")}
+          >
             <FontAwesomeIcon icon={faAngleLeft} />
           </Link>
-          <p>{format(new Date(), "MM/dd(E)", { locale: ja })}</p>
-          <Link href="#" className="px-4">
+          <p>{displayedDate.format("MM/DD(ddd)")}</p>
+          <Link
+            href="#"
+            className="px-4"
+            onClick={() => changeDisplayedDate("prev")}
+          >
             <FontAwesomeIcon icon={faAngleRight} />
           </Link>
         </div>
