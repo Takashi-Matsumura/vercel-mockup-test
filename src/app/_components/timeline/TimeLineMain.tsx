@@ -7,8 +7,6 @@ import {
   faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { format } from "date-fns";
-import { ja } from "date-fns/locale";
 import Link from "next/link";
 import React from "react";
 import SupportPane from "./SupportPane";
